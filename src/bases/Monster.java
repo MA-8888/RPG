@@ -16,11 +16,12 @@ public abstract class Monster extends Living {
 	public void attack(Living target) {
 		// 1から10までのサイコロを振り、自分の攻撃力とかけ合わせた値を相手に与えるダメージとする
 		int attack = Dice.get(1, 10) * target.getOffensive();
-		
+
 		// 相手のHPをダメージ値だけ減らす
 		target.setHp(target.getHp() - attack);
 
 		// コンソールにステータスを表示
-		System.out.println(target.getName() + "が" +  target.getWeapon() + "で攻撃、" + name + "に" + attack + "のダメージを与えた");
+		System.out.println("「" + name + "」が「" + target.getWeapon() + "」で攻撃! 「"
+				+ target.getName() + "」に" + attack + "のダメージを与えた。");
 	}
 }
